@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio de Segurança da Informação</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="main-container">
+
+    <div class="quiz-container">
+        <div id="start-screen">
+            <h1>Desafio de Segurança</h1>
+            <p>Teste seus conhecimentos e veja se você tem o que é preciso para ser um guardião digital.</p>
+            <div class="input-group">
+                <label for="player-name">Digite seu nome ou apelido:</label>
+                <input type="text" id="player-name" placeholder="Hacker_007" maxlength="15">
+            </div>
+            <button id="start-btn" class="btn">Iniciar Desafio</button>
+        </div>
+
+        <div id="quiz-screen" class="hidden">
+            <div id="status-bar">
+                <div id="question-counter"></div>
+                <div id="timer"></div>
+            </div>
+            <div id="question-container">
+                <h2 id="question-text"></h2>
+            </div>
+            <div id="answers-container"></div>
+        </div>
+
+        <div id="end-screen" class="hidden">
+            <h1>Fim de Jogo!</h1>
+            <p>Sua pontuação final foi:</p>
+            <div id="final-score"></div>
+            <p id="result-message"></p>
+            <div class="end-buttons-group">
+                <button id="save-score-btn" class="btn">Salvar Pontuação</button>
+                <button id="restart-btn" class="btn btn-secondary">Jogar Novamente</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="highscore-panel">
+        <h2><i class="fas fa-trophy"></i> Placar de Líderes</h2>
+        <ul id="initial-highscore-list">
+            </ul>
+    </div>
+
+</div>
+
+<script src="questions.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
