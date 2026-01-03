@@ -1,6 +1,3 @@
-// ===== LÓGICA FINAL DO JOGO (VERSÃO COM HTML DO PLACAR CORRIGIDO) =====
-
-// 1. Pegar todos os elementos do HTML
 const startScreen = document.getElementById('start-screen');
 const quizScreen = document.getElementById('quiz-screen');
 const endScreen = document.getElementById('end-screen');
@@ -154,3 +151,30 @@ function resetState() {
     clearInterval(timerIntervalId);
     answersContainer.innerHTML = '';
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const lockIcon = document.getElementById('lock-icon');
+    const introOverlay = document.getElementById('intro-overlay');
+    const loadingText = document.querySelector('.loading-text');
+
+    setTimeout(() => {
+        lockIcon.style.animation = "shake 0.5s ease-in-out";
+    }, 500);
+
+    setTimeout(() => {
+        lockIcon.classList.remove('fa-lock');
+        lockIcon.classList.add('fa-lock-open'); 
+        lockIcon.classList.add('unlock-success'); 
+        lockIcon.style.animation = "none";
+        loadingText.textContent = "ACCESS GRANTED";
+        loadingText.style.color = "#22c55e";
+    }, 1500);
+
+    setTimeout(() => {
+        introOverlay.classList.add('doors-open');
+    }, 2200);
+
+    setTimeout(() => {
+        introOverlay.style.display = 'none';
+    }, 3800);
+});
